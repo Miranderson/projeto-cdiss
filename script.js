@@ -5,7 +5,7 @@ const CONFIG = {
     nome_ong: "CDISS - Centro Desportivo de Inclusão Social Serrano",
     email: "projetocdiss@outlook.com", 
     whatsapp: "+5527998456074", 
-    pix_chave: "10.429.046/0001-84", 
+    pix_chave: "10429046000184", 
     instagram: "https://www.instagram.com/projetosalvacaocdiss/",
     facebook: "https://www.facebook.com/p/CDISS-Centro-Desportivo-de-Inclus%C3%A3o-Social-Serrano-100070410494814/",
     atividades: [
@@ -60,9 +60,9 @@ function scrollTo(sectionId) {
 
 // Copiar chave PIX
 function copiarChave() {
-    const chave = CONFIG.pix_chave;
+    const chave = "10.429.046/0001-84"; // Chave formatada para o usuário
     navigator.clipboard.writeText(chave).then(() => {
-        alert('Chave PIX copiada com sucesso!');
+        alert('Chave PIX (CNPJ) copiada com sucesso!');
     }).catch(err => {
         console.error('Erro ao copiar:', err);
     });
@@ -93,9 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const qrCodeImg = document.getElementById('qrcode');
     if (qrCodeImg) {
-        // Gerar QR Code do PIX via API gratuita (usando o CNPJ)
-        const pixPayload = `00020126360014BR.GOV.BCB.PIX0114${CONFIG.pix_chave.replace(/\D/g, '')}5204000053039865802BR5905CDISS6005SERRA62070503***6304`;
-        qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(pixPayload)}`;
+        // Gerar QR Code do PIX Estático (Payload simplificado para teste)
+        // O payload abaixo é uma estrutura básica de PIX Estático
+        const chaveLimpa = CONFIG.pix_chave.replace(/\D/g, '');
+        const payload = `00020126360014BR.GOV.BCB.PIX0114${chaveLimpa}5204000053039865802BR5905CDISS6005SERRA62070503***6304`;
+        qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(payload)}`;
     }
 
     // Carregar atividades
