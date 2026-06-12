@@ -3,11 +3,11 @@
 
 const CONFIG = {
     nome_ong: "CDISS - Centro Desportivo de Inclusão Social Serrano",
-    email: "projetocdiss@gmail.com", 
-    whatsapp: "+5527992925102", 
-    pix_chave: "projetocdiss@gmail.com", 
+    email: "projetocdiss@outlook.com", 
+    whatsapp: "+5527998456074", 
+    pix_chave: "10.429.046/0001-84", 
     instagram: "https://www.instagram.com/projetosalvacaocdiss/",
-    facebook: "https://www.facebook.com/p/Projeto-CDISS-100064724851214/",
+    facebook: "https://www.facebook.com/p/CDISS-Centro-Desportivo-de-Inclus%C3%A3o-Social-Serrano-100070410494814/",
     atividades: [
         {
             nome: "Violão",
@@ -18,27 +18,32 @@ const CONFIG = {
         {
             nome: "Artesanato & Crochê",
             descricao: "Oficinas criativas para desenvolvimento de habilidades manuais e artísticas.",
-            icon: "🧶"
+            icon: "🧶",
+            foto: "foto3.jpg"
         },
         {
             nome: "Balé",
             descricao: "Dança clássica para expressão corporal, disciplina e coordenação.",
-            icon: "🩰"
+            icon: "🩰",
+            foto: ""
         },
         {
             nome: "Dança Cultural",
             descricao: "Exploração de ritmos e movimentos que celebram nossa cultura.",
-            icon: "💃"
+            icon: "💃",
+            foto: ""
         },
         {
             nome: "Roda de Conversa",
             descricao: "Espaço de diálogo e apoio psicossocial para os jovens e famílias.",
-            icon: "💬"
+            icon: "💬",
+            foto: ""
         },
         {
             nome: "Reforço Escolar",
             descricao: "Apoio pedagógico para auxiliar no desempenho escolar dos alunos.",
-            icon: "📚"
+            icon: "📚",
+            foto: "foto1.jpg"
         }
     ]
 };
@@ -80,10 +85,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (instagramLink) instagramLink.href = CONFIG.instagram;
     if (facebookLink) facebookLink.href = CONFIG.facebook;
 
-    // Atualizar chave PIX
+    // Atualizar chave PIX e QR Code
     const pixChaveElement = document.getElementById('pix-chave');
     if (pixChaveElement) {
         pixChaveElement.textContent = CONFIG.pix_chave;
+    }
+    
+    const qrCodeImg = document.getElementById('qrcode');
+    if (qrCodeImg) {
+        // Gerar QR Code do PIX via API gratuita (usando o CNPJ)
+        const pixPayload = `00020126360014BR.GOV.BCB.PIX0114${CONFIG.pix_chave.replace(/\D/g, '')}5204000053039865802BR5905CDISS6005SERRA62070503***6304`;
+        qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(pixPayload)}`;
     }
 
     // Carregar atividades
@@ -105,8 +117,14 @@ function carregarAtividades() {
     CONFIG.atividades.forEach(atividade => {
         const card = document.createElement('div');
         card.className = 'atividade-card';
+        
+        // Se tiver foto, usa a foto, senão usa o ícone
+        const mediaHtml = atividade.foto 
+            ? `<div class="atividade-card-img" style="background-image: url('${atividade.foto}')"></div>`
+            : `<div class="atividade-card-icon">${atividade.icon}</div>`;
+
         card.innerHTML = `
-            <div class="atividade-card-icon">${atividade.icon}</div>
+            ${mediaHtml}
             <div class="atividade-card-content">
                 <h3>${atividade.nome}</h3>
                 <p>${atividade.descricao}</p>

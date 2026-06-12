@@ -12,15 +12,19 @@
     <header class="header">
         <nav class="navbar">
             <div class="container">
-                <div class="logo">
-                    <h1>CDISS</h1>
-                    <p>Centro Desportivo de Inclusão Social Serrano</p>
+                <div class="logo" style="display: flex; align-items: center;">
+                    <img src="logo.jpg" alt="Logo CDISS" style="height: 60px; margin-right: 15px; border-radius: 50%;">
+                    <div class="logo-text">
+                        <h1 style="font-size: 24px; margin: 0;">CDISS</h1>
+                        <p style="font-size: 10px; margin: 0; opacity: 0.8;">Centro Desportivo de Inclusão Social Serrano</p>
+                    </div>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#atividades">Atividades</a></li>
                     <li><a href="#reforma">Reforma</a></li>
+                    <li><a href="#doacao">Doações</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
@@ -113,7 +117,7 @@
                     <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos mais sobre você..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submeter</button>
+                <button type="submit" class="btn btn-primary">Enviar Candidatura</button>
             </form>
         </div>
     </section>
@@ -129,11 +133,11 @@
                     <h3>Doação via PIX</h3>
                     <p>Escaneie o QR Code ou copie a chave PIX</p>
                     <div class="qrcode-container">
-                        <img id="qrcode" src="logo.jpg" alt="Logo CDISS">
+                        <img id="qrcode" src="" alt="QR Code PIX Gerado" style="max-width: 200px; border: 5px solid white; border-radius: 10px;">
                     </div>
                     <div class="pix-key">
-                        <p id="pix-chave">[Chave PIX será inserida aqui]</p>
-                        <button class="btn btn-secondary" onclick="copiarChave()">Copiar Chave</button>
+                        <p id="pix-chave" style="font-weight: bold; color: var(--primary-color); font-size: 18px;">10.429.046/0001-84</p>
+                        <button class="btn btn-secondary" onclick="copiarChave()">Copiar Chave PIX</button>
                     </div>
                 </div>
 
@@ -188,34 +192,41 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- SEÇÃO DE CONTATO -->
+    <section id="contato" class="contato" style="background-color: white;">
         <div class="container">
-            <div class="footer-content">
+            <h2>Fale Conosco</h2>
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; margin-top: 40px;">
                 <div class="footer-section">
-                    <h4>CDISS</h4>
-                    <p>Centro Desportivo de Inclusão Social Serrano</p>
-                    <p>Rua Pedro Joaquim das Virgens, 43 - Jardim Tropical, Serra/ES</p>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Endereço</h4>
+                    <p>Rua Pedro Joaquim das Virgens, 43</p>
+                    <p>Jardim Tropical, Serra/ES</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="https://instagram.com" target="_blank" title="Instagram">
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Redes Sociais</h4>
+                    <div class="social-links" style="justify-content: center; margin-top: 10px;">
+                        <a href="https://www.instagram.com/projetosalvacaocdiss/" target="_blank" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://facebook.com" target="_blank" title="Facebook">
+                        <a href="https://www.facebook.com/p/CDISS-Centro-Desportivo-de-Inclus%C3%A3o-Social-Serrano-100070410494814/" target="_blank" title="Facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p>E-mail: <a href="mailto:contato@cdiss.com">contato@cdiss.com</a></p>
-                    <p>WhatsApp: <a href="tel:+5527XXXXXXXXX">(27) 9XXXX-XXXX</a></p>
+                    <h4 style="color: var(--primary-color); margin-bottom: 15px;">Contatos Diretos</h4>
+                    <p>E-mail: <a href="mailto:projetocdiss@outlook.com" style="color: var(--accent-color); font-weight: bold;">projetocdiss@outlook.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/5527998456074" style="color: var(--primary-color); font-weight: bold;">(27) 99845-6074</a></p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
 
             <div class="footer-bottom">
                 <p>&copy; 2026 CDISS - Centro Desportivo de Inclusão Social Serrano. Todos os direitos reservados.</p>

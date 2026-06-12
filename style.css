@@ -6,13 +6,14 @@
 }
 
 :root {
-    --primary-color: #2E7D32;
-    --secondary-color: #FFC107;
-    --dark-color: #1B1B1B;
-    --light-color: #F5F5F5;
-    --text-color: #333;
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
+    --primary-color: #1a4d2e; /* Verde Floresta Profundo */
+    --secondary-color: #ffcc00; /* Amarelo CDISS Vibrante */
+    --accent-color: #003366; /* Azul Profundo da Logo */
+    --dark-color: #121212;
+    --light-color: #fafafa;
+    --text-color: #2c3e50;
+    --border-radius: 12px;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 html {
@@ -86,11 +87,14 @@ body {
 
 /* ========== HERO SECTION ========== */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1565c0 100%);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('foto1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    padding: 100px 20px;
+    padding: 120px 20px;
     text-align: center;
-    min-height: 400px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,11 +240,22 @@ section h2::after {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
+.atividade-card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition);
+}
+
+.atividade-card:hover .atividade-card-img {
+    transform: scale(1.1);
+}
+
 .atividade-card-icon {
     background-color: var(--primary-color);
     color: white;
-    padding: 30px;
-    font-size: 48px;
+    padding: 40px;
+    font-size: 60px;
 }
 
 .atividade-card-content {
