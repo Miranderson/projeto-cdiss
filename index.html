@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDISS - Centro Desportivo de Inclusão Social Serrano</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER/NAVEGAÇÃO -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>CDISS</h1>
+                    <p>Centro Desportivo de Inclusão Social Serrano</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#atividades">Atividades</a></li>
+                    <li><a href="#reforma">Reforma</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Transformando Vidas Através do Esporte e Cultura</h2>
+            <p>Oferecemos oportunidades de desenvolvimento integral para crianças e adolescentes em situação de vulnerabilidade social.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollTo('voluntario')">Seja Voluntário</button>
+                <button class="btn btn-secondary" onclick="scrollTo('doacao')">Faça uma Doação</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE O CDISS -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Sobre o CDISS</h2>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Nossa História</h3>
+                    <p id="historia-texto">
+                        O CDISS nasceu da visão de seu fundador, <strong>Alberto Miranda Lenzi</strong>. Tudo começou no bairro Cidade Continental, onde Alberto, então presidente do bairro, desenvolveu um projeto social de destaque após participar de um curso do Terceiro Setor na ArcelorMittal. O que começou com uma escola de futebol em Cidade Continental, cresceu e se transformou ao mudar-se para o bairro <strong>Jardim Tropical</strong>.
+                    </p>
+                    <p>
+                        Com dedicação incansável, Alberto iniciou as atividades em um único cômodo de sua casa, oferecendo reforço escolar e aulas de flauta. Percebendo a demanda crescente e a vulnerabilidade dos jovens locais, ele utilizou recursos próprios para construir o espaço atual do projeto sobre sua residência, garantindo que mais crianças e adolescentes tivessem acesso a oportunidades de transformação. Atendemos hoje crianças e adolescentes de <strong>6 a 15 anos</strong>.
+                    </p>
+                    <h3>Nossa Missão</h3>
+                    <p id="missao-texto">
+                        Promover o desenvolvimento integral de crianças e adolescentes através de atividades esportivas, culturais e educativas, oferecendo oportunidades de transformação social.
+                    </p>
+                </div>
+                <div class="sobre-imagem">
+                    <img id="sobre-img" src="foto1.jpg" alt="Crianças do Projeto CDISS">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSSAS ATIVIDADES -->
+    <section id="atividades" class="atividades">
+        <div class="container">
+            <h2>Nossas Atividades</h2>
+            <div class="atividades-grid" id="atividades-grid">
+                <!-- Cards de atividades serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE VOLUNTARIADO -->
+    <section id="voluntario" class="voluntario">
+        <div class="container">
+            <h2>Quero Ser Voluntário</h2>
+            <p>Junte-se a nós e faça a diferença na vida de crianças e adolescentes do nosso bairro!</p>
+            
+            <form class="formulario-voluntario" id="formulario-voluntario">
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp *</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="(XX) 9XXXX-XXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="como-ajudar">Como você quer ajudar? *</label>
+                    <select id="como-ajudar" name="como-ajudar" required>
+                        <option value="">-- Selecione uma opção --</option>
+                        <option value="Ensinar esportes">Ensinar esportes</option>
+                        <option value="Ensinar música/artes">Ensinar música/artes</option>
+                        <option value="Ajudar na reforma">Ajudar na reforma</option>
+                        <option value="Doações">Doações</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem adicional</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos mais sobre você..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submeter</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE DOAÇÕES -->
+    <section id="doacao" class="doacao">
+        <div class="container">
+            <h2>Apoie o CDISS</h2>
+            <p>Sua doação faz toda a diferença na vida de nossas crianças e adolescentes!</p>
+            
+            <div class="doacao-opcoes">
+                <div class="doacao-card">
+                    <h3>Doação via PIX</h3>
+                    <p>Escaneie o QR Code ou copie a chave PIX</p>
+                    <div class="qrcode-container">
+                        <img id="qrcode" src="logo.jpg" alt="Logo CDISS">
+                    </div>
+                    <div class="pix-key">
+                        <p id="pix-chave">[Chave PIX será inserida aqui]</p>
+                        <button class="btn btn-secondary" onclick="copiarChave()">Copiar Chave</button>
+                    </div>
+                </div>
+
+                <div class="doacao-card">
+                    <h3>Doação de Materiais</h3>
+                    <p>Ajude-nos com materiais de construção e reforma</p>
+                    <a href="#reforma" class="btn btn-primary">Ver Lista de Materiais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE REFORMA -->
+    <section id="reforma" class="reforma">
+        <div class="container">
+            <h2>Ajude-nos a Crescer</h2>
+            <p>Estamos mudando para um espaço maior! Precisamos de sua ajuda para reformar a nova sede.</p>
+            
+            <div class="reforma-content">
+                <div class="reforma-info">
+                    <h3>Por que estamos nos mudando?</h3>
+                    <p id="reforma-texto">
+                        Estamos dando um passo decisivo! O CDISS está mudando para uma nova sede, localizada estrategicamente em frente a um campo de areia. Este novo espaço nos permitirá ampliar nossas oficinas, incluir o futebol e acolher muito mais crianças e jovens em situação de vulnerabilidade. Estamos em reforma para garantir dignidade, conforto e segurança para nossos alunos.
+                    </p>
+                </div>
+
+                <div class="materiais-list">
+                    <h3>Materiais que Precisamos</h3>
+                    <ul id="materiais-ul">
+                        <li>Cimento</li>
+                        <li>Areia</li>
+                        <li>Tinta para parede</li>
+                        <li>Iluminação/Elétrica</li>
+                        <li>Refletores</li>
+                        <li>Segurança</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="parceiros">
+                <h3>Parceiros Oficiais da Reforma</h3>
+                <div id="parceiros-grid" class="parceiros-grid">
+                    <p>Seja o primeiro parceiro oficial!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a id="whatsapp-btn" href="https://wa.me/5527XXXXXXXXX?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20CDISS" 
+       class="whatsapp-btn" target="_blank" title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CDISS</h4>
+                    <p>Centro Desportivo de Inclusão Social Serrano</p>
+                    <p>Rua Pedro Joaquim das Virgens, 43 - Jardim Tropical, Serra/ES</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>E-mail: <a href="mailto:contato@cdiss.com">contato@cdiss.com</a></p>
+                    <p>WhatsApp: <a href="tel:+5527XXXXXXXXX">(27) 9XXXX-XXXX</a></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CDISS - Centro Desportivo de Inclusão Social Serrano. Todos os direitos reservados.</p>
+                <p>Site desenvolvido como projeto de extensão universitária - ADS Multivix</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
