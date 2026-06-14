@@ -9,27 +9,27 @@ const CONFIG = {
         {
             nome: "Roda de Conversa",
             descricao: "Espaço de diálogo e apoio psicossocial para os jovens e famílias com acompanhamento profissional.",
-            foto: "atividades/Roda de Conversa.jpg"
+            foto: "Roda de Conversa.jpg"
         },
         {
             nome: "Reforço Escolar",
             descricao: "Apoio pedagógico focado no desenvolvimento acadêmico e superação de dificuldades escolares.",
-            foto: "atividades/Reforço Escolar.jpg"
+            foto: "Reforço Escolar.jpg"
         },
         {
             nome: "Dança Cultural",
             descricao: "Exploração de ritmos e movimentos que celebram a diversidade e a identidade cultural.",
-            foto: "atividades/Dança Cultural.jpg"
+            foto: "Dança Cultural.jpg"
         },
         {
             nome: "Artesanato & Crochê",
             descricao: "Desenvolvimento de habilidades manuais, criatividade e potencial geração de renda.",
-            foto: "atividades/Artesanato & Crochê.jpg"
+            foto: "Artesanato & Crochê.jpg"
         },
         {
             nome: "Balé",
             descricao: "Dança clássica para expressão corporal, disciplina e coordenação motora.",
-            foto: "atividades/Balé.jpg"
+            foto: "Balé.jpg"
         },
         {
             nome: "Violão",
