@@ -1,300 +1,137 @@
 // ========== CONFIGURAÇÕES DO SITE ==========
-// Essas variáveis serão preenchidas com os dados reais da ONG
-
 const CONFIG = {
     nome_ong: "CDISS - Centro Desportivo de Inclusão Social Serrano",
     email: "projetocdiss@outlook.com", 
     whatsapp: "+5527998456074", 
-    pix_chave: "10429046000184", 
-    instagram: "https://www.instagram.com/projetosalvacaocdiss/",
-    facebook: "https://www.facebook.com/p/CDISS-Centro-Desportivo-de-Inclus%C3%A3o-Social-Serrano-100070410494814/",
+    pix_chave: "10429046000184", // CNPJ limpo para o QR Code
+    pix_display: "10.429.046/0001-84",
     atividades: [
         {
-            nome: "Violão",
-            descricao: "Aulas de música e iniciação ao violão para crianças e adolescentes.",
-            icon: "🎸",
-            foto: "foto2.jpg"
-        },
-        {
-            nome: "Artesanato & Crochê",
-            descricao: "Oficinas criativas para desenvolvimento de habilidades manuais e artísticas.",
-            icon: "🧶",
-            foto: "foto3.jpg"
-        },
-        {
-            nome: "Balé",
-            descricao: "Dança clássica para expressão corporal, disciplina e coordenação.",
-            icon: "🩰",
-            foto: ""
-        },
-        {
-            nome: "Dança Cultural",
-            descricao: "Exploração de ritmos e movimentos que celebram nossa cultura.",
-            icon: "💃",
-            foto: ""
-        },
-        {
             nome: "Roda de Conversa",
-            descricao: "Espaço de diálogo e apoio psicossocial para os jovens e famílias.",
-            icon: "💬",
-            foto: ""
+            descricao: "Espaço de diálogo e apoio psicossocial para os jovens e famílias com acompanhamento profissional.",
+            foto: "atividades/Roda de Conversa.jpg"
         },
         {
             nome: "Reforço Escolar",
-            descricao: "Apoio pedagógico para auxiliar no desempenho escolar dos alunos.",
-            icon: "📚",
-            foto: "foto1.jpg"
+            descricao: "Apoio pedagógico focado no desenvolvimento acadêmico e superação de dificuldades escolares.",
+            foto: "atividades/Reforço Escolar.jpg"
+        },
+        {
+            nome: "Dança Cultural",
+            descricao: "Exploração de ritmos e movimentos que celebram a diversidade e a identidade cultural.",
+            foto: "atividades/Dança Cultural.jpg"
+        },
+        {
+            nome: "Artesanato & Crochê",
+            descricao: "Desenvolvimento de habilidades manuais, criatividade e potencial geração de renda.",
+            foto: "atividades/Artesanato & Crochê.jpg"
+        },
+        {
+            nome: "Balé",
+            descricao: "Dança clássica para expressão corporal, disciplina e coordenação motora.",
+            foto: "atividades/Balé.jpg"
+        },
+        {
+            nome: "Violão",
+            descricao: "Iniciação musical e prática instrumental para despertar talentos artísticos.",
+            foto: "foto2.jpg"
         }
     ]
 };
 
-// ========== FUNÇÕES AUXILIARES ==========
-
-// Scroll suave para seções
-function scrollTo(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-// Copiar chave PIX
-function copiarChave() {
-    const chave = "10.429.046/0001-84"; // Chave formatada para o usuário
-    navigator.clipboard.writeText(chave).then(() => {
-        alert('Chave PIX (CNPJ) copiada com sucesso!');
-    }).catch(err => {
-        console.error('Erro ao copiar:', err);
-    });
-}
-
-// ========== INICIALIZAÇÃO DO SITE ==========
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Atualizar links do WhatsApp
-    const whatsappBtn = document.getElementById('whatsapp-btn');
-    if (whatsappBtn) {
-        const mensagem = encodeURIComponent("Olá! Gostaria de saber mais sobre o CDISS");
-        whatsappBtn.href = `https://wa.me/${CONFIG.whatsapp.replace(/\D/g, '')}?text=${mensagem}`;
-    }
-
-    // Atualizar links das redes sociais no footer
-    const instagramLink = document.querySelector('a[href*="instagram.com"]');
-    const facebookLink = document.querySelector('a[href*="facebook.com"]');
-    
-    if (instagramLink) instagramLink.href = CONFIG.instagram;
-    if (facebookLink) facebookLink.href = CONFIG.facebook;
-
-    // Atualizar chave PIX e QR Code
-    const pixChaveElement = document.getElementById('pix-chave');
-    if (pixChaveElement) {
-        pixChaveElement.textContent = CONFIG.pix_chave;
-    }
-    
-    const qrCodeImg = document.getElementById('qrcode');
-    if (qrCodeImg) {
-        // Gerar QR Code do PIX Estático (Payload simplificado para teste)
-        // O payload abaixo é uma estrutura básica de PIX Estático
-        const chaveLimpa = CONFIG.pix_chave.replace(/\D/g, '');
-        const payload = `00020126360014BR.GOV.BCB.PIX0114${chaveLimpa}5204000053039865802BR5905CDISS6005SERRA62070503***6304`;
-        qrCodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(payload)}`;
-    }
-
-    // Carregar atividades
+// ========== INICIALIZAÇÃO ==========
+document.addEventListener('DOMContentLoaded', () => {
     carregarAtividades();
-
-    // Configurar formulário de voluntariado
-    configurarFormularioVoluntariado();
+    gerarQRCode();
+    iniciarContadores();
+    configurarFormulario();
 });
 
 // ========== CARREGAR ATIVIDADES ==========
-
 function carregarAtividades() {
     const grid = document.getElementById('atividades-grid');
-    
     if (!grid) return;
 
-    grid.innerHTML = ''; // Limpar grid
-
-    CONFIG.atividades.forEach(atividade => {
+    CONFIG.atividades.forEach((at, index) => {
         const card = document.createElement('div');
         card.className = 'atividade-card';
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('data-aos-delay', (index * 100).toString());
         
-        // Se tiver foto, usa a foto, senão usa o ícone
-        const mediaHtml = atividade.foto 
-            ? `<div class="atividade-card-img" style="background-image: url('${atividade.foto}')"></div>`
-            : `<div class="atividade-card-icon">${atividade.icon}</div>`;
-
         card.innerHTML = `
-            ${mediaHtml}
-            <div class="atividade-card-content">
-                <h3>${atividade.nome}</h3>
-                <p>${atividade.descricao}</p>
+            <div class="at-img" style="background-image: url('${at.foto}')"></div>
+            <div class="at-content">
+                <h3>${at.nome}</h3>
+                <p>${at.descricao}</p>
+                <a href="https://wa.me/${CONFIG.whatsapp.replace(/\D/g, '')}" target="_blank" class="btn-text">Saiba Mais <i class="fas fa-arrow-right"></i></a>
             </div>
         `;
         grid.appendChild(card);
     });
 }
 
+// ========== GERAR QR CODE PIX ==========
+function gerarQRCode() {
+    const qrImg = document.getElementById('qrcode');
+    if (!qrImg) return;
+
+    // Payload Estático Simplificado para o CNPJ
+    const payload = `00020126360014BR.GOV.BCB.PIX0114${CONFIG.pix_chave}5204000053039865802BR5905CDISS6005SERRA62070503***6304`;
+    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(payload)}`;
+}
+
+// ========== COPIAR CHAVE PIX ==========
+function copiarChave() {
+    navigator.clipboard.writeText(CONFIG.pix_display).then(() => {
+        alert('Chave CNPJ copiada com sucesso!');
+    });
+}
+
+// ========== CONTADORES ANIMADOS ==========
+function iniciarContadores() {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    const startCounting = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(() => startCounting(counter), 1);
+        } else {
+            counter.innerText = target + (target > 900 ? '+' : '');
+        }
+    };
+
+    // Intersection Observer para disparar quando visível
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startCounting(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => observer.observe(c));
+}
+
 // ========== FORMULÁRIO DE VOLUNTARIADO ==========
+function configurarFormulario() {
+    const form = document.getElementById('formulario-voluntario');
+    if (!form) return;
 
-function configurarFormularioVoluntariado() {
-    const formulario = document.getElementById('formulario-voluntario');
-    
-    if (!formulario) return;
-
-    formulario.addEventListener('submit', function(e) {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        // Coletar dados do formulário
-        const dados = {
-            nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            whatsapp: document.getElementById('whatsapp').value,
-            como_ajudar: document.getElementById('como-ajudar').value,
-            mensagem: document.getElementById('mensagem').value
-        };
-
-        // Validar dados
-        if (!dados.nome || !dados.email || !dados.whatsapp || !dados.como_ajudar) {
-            alert('Por favor, preencha todos os campos obrigatórios!');
-            return;
-        }
-
-        // Enviar via WhatsApp (opção 1 - mais rápido)
-        enviarViaWhatsApp(dados);
-
-        // Limpar formulário
-        formulario.reset();
+        
+        const nome = document.getElementById('nome').value;
+        const area = document.getElementById('como-ajudar').value;
+        
+        const mensagem = `Olá! Meu nome é ${nome}. Tenho interesse em ser voluntário no CDISS na área de ${area}.`;
+        const url = `https://wa.me/${CONFIG.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(mensagem)}`;
+        
+        window.open(url, '_blank');
+        form.reset();
     });
 }
-
-// ========== ENVIAR DADOS VIA WHATSAPP ==========
-
-function enviarViaWhatsApp(dados) {
-    const mensagem = `
-*Novo Voluntário - CDISS*
-
-Nome: ${dados.nome}
-E-mail: ${dados.email}
-WhatsApp: ${dados.whatsapp}
-Como quer ajudar: ${dados.como_ajudar}
-Mensagem: ${dados.mensagem || 'Nenhuma mensagem adicional'}
-    `.trim();
-
-    const mensagemCodificada = encodeURIComponent(mensagem);
-    const numeroWhatsApp = CONFIG.whatsapp.replace(/\D/g, '');
-    
-    // Abrir WhatsApp com a mensagem pré-preenchida
-    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`, '_blank');
-
-    // Mostrar mensagem de sucesso
-    alert('Redirecionando para o WhatsApp... Sua solicitação será enviada!');
-}
-
-// ========== ALTERNATIVA: ENVIAR VIA EMAIL (usando FormSubmit) ==========
-// Descomente se quiser usar email em vez de WhatsApp
-
-/*
-function enviarViaEmail(dados) {
-    const form = new FormData();
-    form.append('email', CONFIG.email);
-    form.append('subject', 'Novo Voluntário - CDISS');
-    form.append('message', `
-Nome: ${dados.nome}
-E-mail: ${dados.email}
-WhatsApp: ${dados.whatsapp}
-Como quer ajudar: ${dados.como_ajudar}
-Mensagem: ${dados.mensagem}
-    `);
-
-    fetch('https://formsubmit.co/ajax/' + CONFIG.email, {
-        method: 'POST',
-        body: form
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert('Obrigado! Sua solicitação foi enviada com sucesso!');
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert('Erro ao enviar. Tente novamente.');
-    });
-}
-*/
-
-// ========== ANIMAÇÕES DE SCROLL ==========
-
-// Observador para animar elementos ao entrar na viewport
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Adicionar animação aos cards quando a página carregar
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.atividade-card, .doacao-card, .reforma-content');
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-});
-
-// ========== ANIMAÇÃO CSS ==========
-// Adicionar estilos de animação dinamicamente
-
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ========== FUNÇÃO PARA ATUALIZAR CONFIGURAÇÕES ==========
-// Use essa função quando receber os dados reais da ONG
-
-function atualizarConfiguracao(novosDados) {
-    Object.assign(CONFIG, novosDados);
-    
-    // Recarregar elementos que dependem da configuração
-    carregarAtividades();
-    
-    // Atualizar links
-    const whatsappBtn = document.getElementById('whatsapp-btn');
-    if (whatsappBtn) {
-        const mensagem = encodeURIComponent("Olá! Gostaria de saber mais sobre o CDISS");
-        whatsappBtn.href = `https://wa.me/${CONFIG.whatsapp.replace(/\D/g, '')}?text=${mensagem}`;
-    }
-    
-    const pixChaveElement = document.getElementById('pix-chave');
-    if (pixChaveElement) {
-        pixChaveElement.textContent = CONFIG.pix_chave;
-    }
-    
-    console.log('Configuração atualizada:', CONFIG);
-}
-
-// ========== EXEMPLO DE USO ==========
-// Quando receber os dados da ONG, chamar:
-// atualizarConfiguracao({
-//     email: "email-real@cdiss.com",
-//     whatsapp: "+5527999999999",
-//     pix_chave: "chave-real-pix",
-//     atividades: [...]
-// });
