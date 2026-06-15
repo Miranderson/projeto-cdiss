@@ -3,347 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CDISS - Transformando vidas através da educação, cultura e inclusão social em Jardim Tropical, Serra-ES.">
-    <title>CDISS | Centro Desportivo de Inclusão Social Serrano</title>
-    
-    <!-- SEO & Open Graph -->
-    <meta property="og:title" content="CDISS | Transformação Social em Jardim Tropical">
-    <meta property="og:description" content="O CDISS promove oportunidades para crianças, adolescentes e famílias através de esporte, cultura e educação.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="foto1.jpg">
-    
-    <!-- Fonts -->
+    <title>CDISS - Centro Desportivo de Inclusão Social Serrano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons & Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
-    <!-- TOP BAR (Transparência & Contato Rápido) -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <span><i class="fas fa-file-contract"></i> CNPJ: 10.429.046/0001-84</span>
-                <div class="top-bar-links">
-                    <a href="#transparencia">Transparência</a>
-                    <a href="#contato">Localização</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="bg-slate-50 text-slate-800">
 
-    <!-- HEADER -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <a href="#home" class="logo">
-                    <img src="logo.jpg" alt="Logo CDISS">
-                    <div class="logo-text">
-                        <h1>CDISS</h1>
-                        <span>Centro Desportivo de Inclusão Social</span>
-                    </div>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#sobre">Quem Somos</a></li>
-                    <li><a href="#atividades">Projetos</a></li>
-                    <li><a href="#impacto">Impacto</a></li>
-                    <li><a href="#doacao" class="btn-nav">Quero Ajudar</a></li>
-                </ul>
-                <div class="mobile-menu-icon">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <span class="badge">Jardim Tropical, Serra-ES</span>
-                <h2>Transformando vidas através da educação, cultura e inclusão social</h2>
-                <p>O CDISS promove oportunidades reais para crianças, adolescentes e famílias, construindo um futuro com mais dignidade e esperança.</p>
-                <div class="hero-buttons">
-                    <a href="#doacao" class="btn btn-primary">Quero Ajudar</a>
-                    <a href="#atividades" class="btn btn-outline">Conheça Nossos Projetos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INDICADORES DE IMPACTO RÁPIDO -->
-    <section class="impact-counters">
-        <div class="container">
-            <div class="counters-grid">
-                <div class="counter-item" data-aos="zoom-in">
-                    <h3 class="counter" data-target="250">0</h3>
-                    <p>Crianças Atendidas</p>
-                </div>
-                <div class="counter-item" data-aos="zoom-in" data-aos-delay="100">
-                    <h3 class="counter" data-target="40">0</h3>
-                    <p>Voluntários Ativos</p>
-                </div>
-                <div class="counter-item" data-aos="zoom-in" data-aos-delay="200">
-                    <h3 class="counter" data-target="10">0</h3>
-                    <p>Projetos Ativos</p>
-                </div>
-                <div class="counter-item" data-aos="zoom-in" data-aos-delay="300">
-                    <h3 class="counter" data-target="1000">0</h3>
-                    <p>Atendimentos/Ano</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUEM SOMOS -->
-    <section id="sobre" class="sobre section-padding">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Quem Somos</h2>
-                <p>Conheça a história e os valores que movem o CDISS</p>
-            </div>
-            <div class="sobre-grid">
-                <div class="sobre-text" data-aos="fade-right">
-                    <h3>Nossa História</h3>
-                    <p>O CDISS nasceu da visão de seu fundador, <strong>Alberto Miranda Lenzi</strong>. Após um curso do Terceiro Setor na ArcelorMittal, Alberto iniciou uma escola de futebol em Cidade Continental. Ao mudar-se para Jardim Tropical, deu continuidade ao trabalho em sua própria casa, oferecendo reforço escolar e flauta.</p>
-                    <p>Com recursos próprios e muita dedicação, construiu o espaço atual para atender a crescente demanda da comunidade, transformando a vida de jovens de 6 a 15 anos.</p>
-                    
-                    <div class="mvv-grid">
-                        <div class="mvv-item">
-                            <i class="fas fa-bullseye"></i>
-                            <h4>Missão</h4>
-                            <p>Promover o desenvolvimento integral através do esporte e cultura.</p>
-                        </div>
-                        <div class="mvv-item">
-                            <i class="fas fa-eye"></i>
-                            <h4>Visão</h4>
-                            <p>Ser referência em transformação social e inclusão no Espírito Santo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sobre-image" data-aos="fade-left">
-                    <img src="foto1.jpg" alt="Impacto Social CDISS">
-                    <div class="image-experience">
-                        <span>+15 Anos</span>
-                        <p>De Dedicação Social</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJETOS / ATIVIDADES -->
-    <section id="atividades" class="atividades section-padding bg-light">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Nossos Projetos</h2>
-                <p>Oficinas que transformam talentos em oportunidades</p>
-            </div>
-            <div class="atividades-grid" id="atividades-grid">
-                <!-- Inserido via JS com fotos reais -->
-            </div>
-        </div>
-    </section>
-
-    <!-- TRANSPARÊNCIA -->
-    <section id="transparencia" class="transparencia section-padding">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Transparência</h2>
-                <p>Compromisso com a ética e prestação de contas</p>
-            </div>
-            <div class="docs-grid">
-                <div class="doc-card" data-aos="flip-left">
-                    <i class="fas fa-file-pdf"></i>
-                    <h4>Estatuto Social</h4>
-                    <a href="#" class="btn-text">Visualizar <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                <div class="doc-card" data-aos="flip-left" data-aos-delay="100">
-                    <i class="fas fa-id-card"></i>
-                    <h4>CNPJ Ativo</h4>
-                    <a href="#" class="btn-text">Consultar <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                <div class="doc-card" data-aos="flip-left" data-aos-delay="200">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Relatório Anual</h4>
-                    <a href="#" class="btn-text">Baixar PDF <i class="fas fa-download"></i></a>
-                </div>
-                <div class="doc-card" data-aos="flip-left" data-aos-delay="300">
-                    <i class="fas fa-balance-scale"></i>
-                    <h4>Prestação de Contas</h4>
-                    <a href="#" class="btn-text">Acessar <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMO AJUDAR / DOAÇÃO -->
-    <section id="doacao" class="doacao section-padding bg-dark text-white">
-        <div class="container">
-            <div class="doacao-wrapper">
-                <div class="doacao-info" data-aos="fade-right">
-                    <h2>Como você pode ajudar?</h2>
-                    <p>Existem diversas formas de apoiar o CDISS e fazer parte desta corrente do bem.</p>
-                    
-                    <div class="ajuda-options">
-                        <div class="ajuda-item">
-                            <i class="fas fa-hand-holding-heart"></i>
-                            <div>
-                                <h4>Doação Financeira</h4>
-                                <p>Contribua com qualquer valor via PIX.</p>
-                            </div>
-                        </div>
-                        <div class="ajuda-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Voluntariado</h4>
-                                <p>Doe seu tempo e talento para nossas oficinas.</p>
-                            </div>
-                        </div>
-                        <div class="ajuda-item">
-                            <i class="fas fa-building"></i>
-                            <div>
-                                <h4>Parceria Empresarial</h4>
-                                <p>Sua empresa como agente de transformação.</p>
-                            </div>
-                        </div>
-                    </div>
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <span class="text-2xl font-bold text-blue-600 tracking-wider">CDISS</span>
+                    </a>
                 </div>
                 
-                <div class="doacao-card-main" data-aos="fade-left">
-                    <h3>Faça um PIX Agora</h3>
-                    <div class="qrcode-wrapper">
-                        <img id="qrcode" src="" alt="QR Code PIX">
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 px-1 pt-1 text-sm">Início</a>
+                    <a href="sobre.html" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Quem Somos</a>
+                    <a href="servicos.html" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Nossas Atividades</a>
+                    <a href="#impacto" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Impacto</a>
+                    <a href="contato.html" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Quero Ajudar</a>
+                </nav>
+
+                <div class="hidden md:flex items-center">
+                    <a href="contato.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-colors">
+                        Fazer Doação
+                    </a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-white border-b border-slate-200" id="mobile-menu">
+            <div class="pt-2 pb-4 space-y-1 px-4">
+                <a href="index.html" class="bg-blue-50 border-l-4 border-blue-600 text-blue-700 block pl-3 pr-4 py-2 text-base font-medium">Início</a>
+                <a href="sobre.html" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Quem Somos</a>
+                <a href="servicos.html" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Nossas Atividades</a>
+                <a href="#impacto" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Impacto</a>
+                <a href="contato.html" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Quero Ajudar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-gradient-to-r border-b border-slate-200 bg-slate-900 text-white overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=1920" alt="Esporte e Inclusão" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-5xl mx-auto text-center">
+            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-500/20 text-blue-300 mb-4 border border-blue-500/30">Transformando Vidas Através do Esporte</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-slate-200 to-blue-200 bg-clip-text text-transparent">
+                Centro Desportivo de Inclusão Social Serrano
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed">
+                Promovendo a saúde, o bem-estar e a integração social por meio de atividades físicas e suporte humanizado para toda a comunidade.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="sobre.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-colors">
+                    Conheça Nossa História
+                </a>
+                <a href="contato.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-slate-700 text-base font-medium rounded-md text-slate-200 bg-slate-800/80 hover:bg-slate-800 hover:text-white transition-colors">
+                    Como Ajudar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Nossas Atividades</h2>
+            <p class="text-lg text-slate-600">Desenvolvemos ações focadas na saúde integral e no desenvolvimento comunitário.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
                     </div>
-                    <div class="pix-details">
-                        <span class="label">Chave CNPJ:</span>
-                        <div class="copy-box">
-                            <span id="pix-chave">10.429.046/0001-84</span>
-                            <button onclick="copiarChave()"><i class="fas fa-copy"></i></button>
-                        </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Saúde Integrada</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Atendimento focado no bem-estar físico e mental, unindo diferentes especialidades para o cuidado da comunidade.</p>
+                    <a href="servicos.html" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-dumbbell text-2xl"></i>
                     </div>
-                    <p class="small">Favorecido: CDISS - Centro Desportivo de Inclusão Social Serrano</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Inclusão Esportiva</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Projetos esportivos voltados para crianças, jovens e adultos, utilizando o esporte como ferramenta de cidadania.</p>
+                    <a href="servicos.html" class="text-emerald-600 hover:text-emerald-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ações Sociais</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Eventos, palestras e mutirões de apoio às famílias em situação de vulnerabilidade na região Serrana.</p>
+                    <a href="servicos.html" class="text-purple-600 hover:text-purple-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- VOLUNTARIADO -->
-    <section id="voluntario" class="voluntario section-padding">
-        <div class="container">
-            <div class="voluntario-container">
-                <div class="voluntario-form-wrapper" data-aos="fade-up">
-                    <div class="section-header">
-                        <h2>Seja um Voluntário</h2>
-                        <p>Preencha seus dados e entraremos em contato</p>
-                    </div>
-                    <form id="formulario-voluntario" class="modern-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Nome Completo</label>
-                                <input type="text" id="nome" required placeholder="Seu nome">
-                            </div>
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" id="email" required placeholder="seu@email.com">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>WhatsApp</label>
-                                <input type="tel" id="whatsapp" required placeholder="(27) 99999-9999">
-                            </div>
-                            <div class="form-group">
-                                <label>Área de Interesse</label>
-                                <select id="como-ajudar" required>
-                                    <option value="">Selecione...</option>
-                                    <option value="Educação">Educação / Reforço</option>
-                                    <option value="Artes">Artes / Música</option>
-                                    <option value="Esportes">Esportes</option>
-                                    <option value="Administrativo">Administrativo</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Mensagem</label>
-                            <textarea id="mensagem" rows="4" placeholder="Conte-nos como quer ajudar..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Enviar Candidatura</button>
-                    </form>
+    <section id="impacto" class="bg-blue-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold mb-2">500+</p>
+                <p class="text-blue-100 font-medium">Pessoas Atendidas</p>
+            </div>
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold mb-2">10+</p>
+                <p class="text-blue-100 font-medium">Projetos Ativos</p>
+            </div>
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold mb-2">100%</p>
+                <p class="text-blue-100 font-medium">Dedicação Social</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Como você pode ajudar?</h2>
+        <p class="text-lg text-slate-600 mb-8">Existem diversas formas de apoiar o CDISS e fazer parte desta corrente do bem.</p>
+        
+        <hr class="border-slate-200 my-8 max-w-xs mx-auto">
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-150 inline-block text-left max-w-md w-full mx-auto">
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-1">Doação Financeira</h3>
+                    <p class="text-slate-600 text-sm mb-4">Contribua com qualquer valor via PIX de forma rápida e segura.</p>
+                    <a href="contato.html" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700">
+                        Ir para dados do PIX <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTATO & MAPA -->
-    <section id="contato" class="contato section-padding bg-light">
-        <div class="container">
-            <div class="contato-grid">
-                <div class="contato-info" data-aos="fade-right">
-                    <h2>Fale Conosco</h2>
-                    <p>Estamos à disposição para tirar suas dúvidas e receber sua visita.</p>
-                    
-                    <div class="info-list">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Rua Pedro Joaquim das Virgens, 43 - Jardim Tropical, Serra/ES</p>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <p>projetocdiss@outlook.com</p>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <p>(27) 99845-6074</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-box">
-                        <h4>Siga-nos:</h4>
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/projetosalvacaocdiss/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/p/CDISS-Centro-Desportivo-de-Inclus%C3%A3o-Social-Serrano-100070410494814/" target="_blank"><i class="fab fa-facebook"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contato-map" data-aos="fade-left">
-                    <!-- Placeholder para Mapa ou Imagem da Fachada -->
-                    <div class="map-box">
-                        <img src="foto1.jpg" alt="Localização CDISS" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
-                        <a href="https://www.google.com/maps/search/Rua+Pedro+Joaquim+das+Virgens,+43+-+Jardim+Tropical,+Serra%2FES" target="_blank" class="btn-map">Ver no Google Maps</a>
-                    </div>
-                </div>
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-sm">&copy; 2026 CDISS - Centro Desportivo de Inclusão Social Serrano. Todos os direitos reservados.</p>
+                <p class="text-xs text-slate-500 mt-1">Projeto de Extensão Universitária - ADS Multivix</p>
             </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 CDISS - Centro Desportivo de Inclusão Social Serrano. Todos os direitos reservados.</p>
-                <p class="dev-credit">Desenvolvido como Projeto de Extensão Universitária - ADS Multivix</p>
+            <div class="text-center md:text-right border-t md:border-t-0 border-slate-850 pt-4 md:pt-0">
+                <p class="text-sm">Desenvolvido por:</p>
+                <a href="https://github.com/Miranderson" target="_blank" class="text-white hover:text-blue-400 font-semibold transition-colors flex items-center justify-center md:justify-end gap-2 mt-0.5">
+                    <i class="fa-brands fa-github text-base"></i> Miranderson
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating -->
-    <a href="https://wa.me/5527998456074" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
     </script>
 </body>
