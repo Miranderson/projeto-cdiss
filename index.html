@@ -4,40 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDISS - Centro Desportivo de Inclusão Social Serrano</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;650;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
+    <!-- HEADER / MENU DE NAVEGAÇÃO -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center">
+                <!-- Logo e Localização -->
+                <div class="flex-shrink-0 flex flex-col justify-center">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <span class="text-2xl font-bold text-blue-600 tracking-wider">CDISS</span>
+                        <span class="text-2xl font-black text-emerald-600 tracking-wider">CDISS</span>
                     </a>
+                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest"><i class="fa-solid fa-location-dot text-rose-500"></i> Jardim Tropical - Serra/ES</span>
                 </div>
                 
+                <!-- Menu Desktop -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-blue-600 font-semibold border-b-2 border-blue-600 px-1 pt-1 text-sm">Início</a>
-                    <a href="sobre.html" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Quem Somos</a>
-                    <a href="servicos.html" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Nossas Atividades</a>
-                    <a href="#impacto" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Impacto</a>
-                    <a href="contato.html" class="text-slate-600 hover:text-blue-600 px-1 pt-1 text-sm font-medium transition-colors">Quero Ajudar</a>
+                    <a href="index.html" class="text-emerald-600 font-semibold border-b-2 border-emerald-600 px-1 pt-1 text-sm">Início</a>
+                    <a href="sobre.html" class="text-slate-600 hover:text-emerald-600 px-1 pt-1 text-sm font-medium transition-colors">Quem Somos</a>
+                    <a href="servicos.html" class="text-slate-600 hover:text-emerald-600 px-1 pt-1 text-sm font-medium transition-colors">Nossas Atividades</a>
+                    <a href="#impacto" class="text-slate-600 hover:text-emerald-600 px-1 pt-1 text-sm font-medium transition-colors">Impacto</a>
+                    <a href="contato.html" class="text-slate-600 hover:text-emerald-600 px-1 pt-1 text-sm font-medium transition-colors">Quero Ajudar</a>
                 </nav>
 
+                <!-- Botão de Ação -->
                 <div class="hidden md:flex items-center">
-                    <a href="contato.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-colors">
-                        Fazer Doação
+                    <a href="contato.html" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 shadow-sm transition-colors">
+                        Apoiar o Projeto
                     </a>
                 </div>
 
+                <!-- Botão Menu Hamburguer (Celular) -->
                 <div class="flex items-center md:hidden">
                     <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none">
                         <i class="fa-solid fa-bars text-xl"></i>
@@ -46,9 +56,10 @@
             </div>
         </div>
 
+        <!-- Menu Mobile -->
         <div class="hidden md:hidden bg-white border-b border-slate-200" id="mobile-menu">
             <div class="pt-2 pb-4 space-y-1 px-4">
-                <a href="index.html" class="bg-blue-50 border-l-4 border-blue-600 text-blue-700 block pl-3 pr-4 py-2 text-base font-medium">Início</a>
+                <a href="index.html" class="bg-emerald-50 border-l-4 border-emerald-600 text-emerald-700 block pl-3 pr-4 py-2 text-base font-medium">Início</a>
                 <a href="sobre.html" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Quem Somos</a>
                 <a href="servicos.html" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Nossas Atividades</a>
                 <a href="#impacto" class="border-l-4 border-transparent text-slate-600 hover:bg-slate-50 hover:border-slate-300 block pl-3 pr-4 py-2 text-base font-medium">Impacto</a>
@@ -57,85 +68,93 @@
         </div>
     </header>
 
-    <section class="relative bg-gradient-to-r border-b border-slate-200 bg-slate-900 text-white overflow-hidden py-24 px-4 sm:px-6 lg:px-8">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=1920" alt="Esporte e Inclusão" class="w-full h-full object-cover">
+    <!-- HERO SECTION (AQUI VAI A SUA FOTO PRINCIPAL) -->
+    <section class="relative bg-slate-900 text-white overflow-hidden py-28 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 opacity-40">
+            <!-- DICA: Quando tiver a foto real no seu github, mude o endereço abaixo para o nome da sua foto (ex: images/foto-time.jpg) -->
+            <img src="https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&q=80&w=1920" alt="Crianças jogando futebol social" class="w-full h-full object-cover object-center">
         </div>
         <div class="relative max-w-5xl mx-auto text-center">
-            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-500/20 text-blue-300 mb-4 border border-blue-500/30">Transformando Vidas Através do Esporte</span>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-slate-200 to-blue-200 bg-clip-text text-transparent">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 mb-4 border border-emerald-500/30 uppercase tracking-wider">Inclusão pelo Esporte em Jardim Tropical</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
                 Centro Desportivo de Inclusão Social Serrano
             </h1>
-            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed">
-                Promovendo a saúde, o bem-estar e a integração social por meio de atividades físicas e suporte humanizado para toda a comunidade.
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-200 mb-10 leading-relaxed font-light">
+                Transformando a realidade de crianças e jovens da Serra através do esporte, da cidadania e do fortalecimento comunitário.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="sobre.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-md transition-colors">
-                    Conheça Nossa História
+                <a href="sobre.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 shadow-md transition-colors">
+                    Conheça Nosso Trabalho
                 </a>
                 <a href="contato.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 border border-slate-700 text-base font-medium rounded-md text-slate-200 bg-slate-800/80 hover:bg-slate-800 hover:text-white transition-colors">
-                    Como Ajudar
+                    Como Apoiar
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- SEÇÃO: NOSSAS ATIVIDADES -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Nossas Atividades</h2>
-            <p class="text-lg text-slate-600">Desenvolvemos ações focadas na saúde integral e no desenvolvimento comunitário.</p>
+            <p class="text-lg text-slate-600">Projetos práticos para ocupar o contraturno escolar e dar novas perspectivas para a nossa juventude.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="p-6">
-                    <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5">
-                        <i class="fa-solid fa-heart-pulse text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Saúde Integrada</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">Atendimento focado no bem-estar físico e mental, unindo diferentes especialidades para o cuidado da comunidade.</p>
-                    <a href="servicos.html" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
-                </div>
-            </div>
+            <!-- Atividade 1 -->
             <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
                 <div class="p-6">
                     <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
-                        <i class="fa-solid fa-dumbbell text-2xl"></i>
+                        <i class="fa-solid fa-soccer-ball text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Inclusão Esportiva</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">Projetos esportivos voltados para crianças, jovens e adultos, utilizando o esporte como ferramenta de cidadania.</p>
-                    <a href="servicos.html" class="text-emerald-600 hover:text-emerald-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Escolinha de Futebol</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Treinos esportivos focados na disciplina, trabalho em equipe e saúde física para crianças e adolescentes da região.</p>
+                    <a href="servicos.html" class="text-emerald-600 hover:text-emerald-700 font-medium inline-flex items-center text-sm">Ver horários <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
                 </div>
             </div>
+            <!-- Atividade 2 -->
             <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
                 <div class="p-6">
-                    <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-5">
-                        <i class="fa-solid fa-users text-2xl"></i>
+                    <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ações Sociais</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">Eventos, palestras e mutirões de apoio às famílias em situação de vulnerabilidade na região Serrana.</p>
-                    <a href="servicos.html" class="text-purple-600 hover:text-purple-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cidadania e Valores</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Acompanhamento social que exige boa frequência escolar e promove conversas sobre respeito, união e futuro profissional.</p>
+                    <a href="servicos.html" class="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center text-sm">Saiba mais <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
+                </div>
+            </div>
+            <!-- Atividade 3 -->
+            <div class="bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="p-6">
+                    <div class="w-12 h-12 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-handshake-angle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Apoio Comunitário</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Integração com as famílias de Jardim Tropical através de eventos comunitários e apoio em situações de vulnerabilidade.</p>
+                    <a href="servicos.html" class="text-amber-600 hover:text-amber-700 font-medium inline-flex items-center text-sm">Como participar <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="impacto" class="bg-blue-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <!-- SEÇÃO: IMPACTO -->
+    <section id="impacto" class="bg-emerald-600 text-white py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
-                <p class="text-4xl sm:text-5xl font-extrabold mb-2">500+</p>
-                <p class="text-blue-100 font-medium">Pessoas Atendidas</p>
+                <p class="text-4xl sm:text-5xl font-extrabold mb-2">Jardim Tropical</p>
+                <p class="text-emerald-100 font-medium">Nossa Base Comunitária</p>
             </div>
             <div>
-                <p class="text-4xl sm:text-5xl font-extrabold mb-2">10+</p>
-                <p class="text-blue-100 font-medium">Projetos Ativos</p>
+                <p class="text-4xl sm:text-5xl font-extrabold mb-2">Inclusão</p>
+                <p class="text-emerald-100 font-medium">Pelo Esporte Serrano</p>
             </div>
             <div>
-                <p class="text-4xl sm:text-5xl font-extrabold mb-2">100%</p>
-                <p class="text-blue-100 font-medium">Dedicação Social</p>
+                <p class="text-4xl sm:text-5xl font-extrabold mb-2">Futuro</p>
+                <p class="text-emerald-100 font-medium">Para a Juventude da Serra</p>
             </div>
         </div>
     </section>
 
+    <!-- SEÇÃO: COMO VOCÊ PADE AJUDAR -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Como você pode ajudar?</h2>
         <p class="text-lg text-slate-600 mb-8">Existem diversas formas de apoiar o CDISS e fazer parte desta corrente do bem.</p>
@@ -144,13 +163,13 @@
 
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-150 inline-block text-left max-w-md w-full mx-auto">
             <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
                 </div>
                 <div>
                     <h3 class="text-lg font-bold text-slate-900 mb-1">Doação Financeira</h3>
-                    <p class="text-slate-600 text-sm mb-4">Contribua com qualquer valor via PIX de forma rápida e segura.</p>
-                    <a href="contato.html" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700">
+                    <p class="text-slate-600 text-sm mb-4">Contribua com qualquer valor para a manutenção dos materiais esportivos e lanches dos alunos.</p>
+                    <a href="contato.html" class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-700">
                         Ir para dados do PIX <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
                     </a>
                 </div>
@@ -158,28 +177,39 @@
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+    <!-- MAPA DO PROJETO EM JARDIM TROPICAL -->
+    <section class="w-full h-96 bg-slate-200 relative border-t border-slate-200">
+        <!-- Mapa interativo focado em Jardim Tropical, Serra - ES -->
+        <iframe 
+            class="w-full h-full border-0 grayscale opacity-80 hover:grayscale-0 transition-all" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14976.223849106207!2d-40.27986065!3d-20.2150992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbb47e62a392815%3A0xf65fb66ba2fdf21e!2sJardim%20Tropical%2C%20Serra%20-%20ES!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- RODAPÉ COM SEU PORTFÓLIO -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
                 <p class="text-sm">&copy; 2026 CDISS - Centro Desportivo de Inclusão Social Serrano. Todos os direitos reservados.</p>
                 <p class="text-xs text-slate-500 mt-1">Projeto de Extensão Universitária - ADS Multivix</p>
             </div>
-            <div class="text-center md:text-right border-t md:border-t-0 border-slate-850 pt-4 md:pt-0">
+            <div class="text-center md:text-right border-t md:border-t-0 border-slate-800 pt-4 md:pt-0">
                 <p class="text-sm">Desenvolvido por:</p>
-                <a href="https://github.com/Miranderson" target="_blank" class="text-white hover:text-blue-400 font-semibold transition-colors flex items-center justify-center md:justify-end gap-2 mt-0.5">
+                <a href="https://github.com/Miranderson" target="_blank" class="text-white hover:text-emerald-400 font-semibold transition-colors flex items-center justify-center md:justify-end gap-2 mt-0.5">
                     <i class="fa-brands fa-github text-base"></i> Miranderson
                 </a>
             </div>
         </div>
     </footer>
 
+    <!-- CODE JAVASCRIPT FOR MOBILE MENU -->
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
     </script>
 </body>
 </html>
