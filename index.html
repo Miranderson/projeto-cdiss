@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="style.css">
     <style>
     /* Estilos para garantir o funcionamento do menu mobile */
+        /* Oculta o ícone de hambúrguer por padrão em computadores */
+.mobile-menu-icon {
+    display: none !important;
+}
+Isso garante que o menu de hambúrguer só seja renderizado a partir do momento em que a tela for menor que `768px`, ocultando-o perfeitamente em telas maiores e mantendo o restante do seu arquivo e comportamento exatamente idênticos.
     @media (max-width: 768px) {
         .mobile-menu-icon {
             display: block !important;
