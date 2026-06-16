@@ -18,6 +18,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
+    <style>
+    /* Estilos para garantir o funcionamento do menu mobile */
+    @media (max-width: 768px) {
+        .mobile-menu-icon {
+            display: block !important;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .nav-links {
+            display: none; /* Esconde o menu por padrão no mobile */
+            flex-direction: column;
+            position: absolute;
+            top: 70px; /* Ajuste de acordo com a altura do seu header */
+            left: 0;
+            width: 100%;
+            background-color: #ffffff; /* Cor de fundo do menu */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        /* Classe que o JavaScript ativa ao clicar */
+        .nav-links.active {
+            display: flex !important;
+        }
+    }
+</style>
 </head>
 <body>
 
@@ -290,10 +318,39 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+
+    // Código corrigido para o Menu Mobile
+    document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuIcon = document.getElementById('mobile-menu-icon');
         const navLinks = document.getElementById('nav-links');
-        mobileMenuIcon.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-    </script>
+
+        if (mobileMenuIcon && navLinks) {
+            // Abre e fecha o menu ao clicar no ícone
+            mobileMenuIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+            });
+
+            // Fecha o menu automaticamente ao clicar em qualquer link (âncora)
+            const links = navLinks.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Fecha o menu se o usuário clicar fora dele
+            document.addEventListener('click', (e) => {
+                if (!navLinks.contains(e.target) && !mobileMenuIcon.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
